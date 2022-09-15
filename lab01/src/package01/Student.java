@@ -11,27 +11,34 @@ package package01;
  */
 public class Student extends Person {
 
-    private final String status;
+    private String status;
+    public static final String FRESHMAN = "Freshman";
+    public static final String SOPHOMORE = "Sophomore";
+    public static final String JUNIOR = "Junior";
+    public static final String SENIOR = "Senior";
 
     public Student(String name, String address, String phone, String email,
             String status) {
         super(name, address, phone, email);
-        if (statusValidation(status)) {
-            this.status = status;
-        } else {
-            throw new IllegalArgumentException("status must be one of the following: "
-                    + "freshman, sophomore, junior, senior.");
-        }
+        setStatus(status);
     }
 
-    private boolean statusValidation(String status) {
-        String[] valid = new String[]{"freshman", "sophomore", "junior", "senior"};
-        for (String e : valid) {
-            if (status.equalsIgnoreCase(e)) {
-                return true;
-            }
+    public void setStatus(String st) {
+        switch (st) {
+            case FRESHMAN:
+                status = FRESHMAN;
+                break;
+            case SOPHOMORE:
+                status = SOPHOMORE;
+                break;
+            case JUNIOR:
+                status = JUNIOR;
+                break;
+            case SENIOR:
+                status = SENIOR;
+            default:
+                throw new IllegalArgumentException("Must use class constants!");
         }
-        return false;
     }
 
     public String getStatus() {

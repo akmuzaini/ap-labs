@@ -9,15 +9,15 @@ package package01;
  *
  * @author dell
  */
-//import java.util.Date;
+import java.util.Date;
 public class Employee extends Person {
 
     private String office;
     private double salary;
-    private String dateHired;
+    private Date dateHired;
 
     public Employee(String name, String address, String phone, String email,
-            String office, double salary, String dateHired) {
+            String office, double salary, Date dateHired) {
         super(name, address, phone, email);
         setOffice(office);
         setSalary(salary);
@@ -40,11 +40,11 @@ public class Employee extends Person {
         return salary;
     }
 
-    public void setDateHired(String dateHired) {
+    public void setDateHired(Date dateHired) {
         this.dateHired = dateHired;
     }
 
-    public String getDateHired() {
+    public Date getDateHired() {
         return dateHired;
     }
 

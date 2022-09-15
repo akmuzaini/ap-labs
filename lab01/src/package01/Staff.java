@@ -9,12 +9,13 @@ package package01;
  *
  * @author dell
  */
+import java.util.Date;
 public class Staff extends Employee {
 
     private String title;
 
     public Staff(String name, String address, String phone, String email,
-            String office, double salary, String dateHired,
+            String office, double salary, Date dateHired,
             String title) {
         super(name, address, phone, email, office, salary, dateHired);
         this.title = title;

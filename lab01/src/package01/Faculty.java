@@ -9,24 +9,30 @@ package package01;
  *
  * @author dell
  */
+import java.util.Date;
 public class Faculty extends Employee {
 
-    private int hours;
+    private int[] hours = new int[10];
     private String rank;
 
     public Faculty(String name, String address, String phone, String email,
-            String office, double salary, String dateHired,
-            int hours, String rank) {
+            String office, double salary, Date dateHired,
+            int[] hours, String rank) {
         super(name, address, phone, email, office, salary, dateHired);
         setHours(hours);
         setRank(rank);
     }
 
-    public void setHours(int hours) {
-        this.hours = hours;
+    public void setHours(int[] hrs) {
+//        this.hours = hrs;
+        for (int i = 0; i < hrs.length; i++) {
+            if ((hrs[i] >= 0) && hrs[i] <= 23) {
+                this.hours[i] = hrs[i];
+            }
+        }
     }
 
-    public int getHours() {
+    public int[] getHours() {
         return hours;
     }
 
