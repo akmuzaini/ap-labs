@@ -1,0 +1,12 @@
+create database salesdb;
+use salesdb;
+
+create table Employees(
+ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+Name VARCHAR(40) NOT NULL,
+Hired_Date DATE NOT NULL
+);
+
+create user 's4887'@'localhost' identified by '1234';
+
+grant all privileges on salesdb.* to 's4887'@'localhost';
